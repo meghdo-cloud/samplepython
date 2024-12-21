@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from database import get_db_connection
+import os
 import logging
 import sys
 
