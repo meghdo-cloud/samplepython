@@ -30,10 +30,6 @@ def readiness():
 def is_active():
     return jsonify({"message": "Welcome to Drizzle"})
 
-@app.route('/isActive', methods=['GET'])
-def is_active():
-    return jsonify({"message": "Welcome to Drizzle"})
-
 @app.route('/data', methods=['POST'])
 def add_data():
     try:
