@@ -52,6 +52,8 @@ spec:
           {{- end }}          
         {{- if .Values.sqlproxy.enabled }}
           env:
+            - name: DB_NAME
+              value: "{{ .Values.sqlproxy.db_name }}"
             - name: DB_PORT
               value: "{{ .Values.sqlproxy.db_port }}"
             - name: DB_USER
