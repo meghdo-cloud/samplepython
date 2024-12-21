@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-URL_PREFIX = os.environ['URL_PREFIX']
+URL_PREFIX = os.getenv('URL_PREFIX', '/drizzle-python')
+logger.info(f"Using URL_PREFIX: {URL_PREFIX}")
 
 @app.route(f'{URL_PREFIX}/health/live', methods=['GET'])
 def liveness():
