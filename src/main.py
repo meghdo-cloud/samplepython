@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-URL_PREFIX = os.getenv('URL_PREFIX', '/drizzlepython')
+URL_PREFIX = os.getenv('URL_PREFIX', '/samplepython')
 logger.info(f"Using URL_PREFIX: {URL_PREFIX}")
 
 @app.route(f'{URL_PREFIX}/health/live', methods=['GET'])
