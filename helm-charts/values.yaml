@@ -26,8 +26,8 @@ serviceAccount:
   # Automatically mount a ServiceAccount's API credentials?
   automount: true
   # Annotations to add to the service account
-  annotations: 
-    iam.gke.io/gcp-service-account: svc-cloudsql@meghdo-4567.iam.gserviceaccount.com
+  annotations:
+      "eks.amazonaws.com/role-arn" = aws_iam_role.rds_access_role.arn
 
 # This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/ 

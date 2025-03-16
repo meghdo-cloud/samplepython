@@ -50,12 +50,14 @@ spec:
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}          
-        {{- if .Values.sqlproxy.enabled }}
+        {{- if .Values.database.enabled }}
           env:
             - name: URL_PREFIX
               value: "/{{ .Values.virtualservice.prefix }}"
             - name: DB_NAME
               value: "{{ .Values.sqlproxy.db_name }}"
+            - name: DB_HOST
+              value: "{{ .Values.sqlproxy.db_host }}"
             - name: DB_PORT
               value: "{{ .Values.sqlproxy.db_port }}"
             - name: DB_USER
@@ -65,17 +67,6 @@ spec:
                 secretKeyRef:
                   name: db-password
                   key: db_password
-        - name: cloud-sql-proxy
-          image: "{{ .Values.sqlproxy.repository }}:{{ .Values.sqlproxy.tag }}"
-          args:
-            - "--structured-logs"
-            - "--address=0.0.0.0"
-            - "--port={{ .Values.sqlproxy.db_port }}"
-            - "{{ .Values.project_id }}:{{ .Values.region }}:{{ .Values.sqlproxy.db_instance }}"
-          resources:
-            {{- toYaml .Values.sqlproxy.resources | nindent 12 }}
-          securityContext:
-            runAsNonRoot: true
         {{- end }}
       {{- with .Values.volumes }}
       volumes:

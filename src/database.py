@@ -16,7 +16,7 @@ def get_db_connection():
             raise Exception(f"Missing required environment variables: {', '.join(missing_vars)}")
         
         connection = psycopg2.connect(
-            host='127.0.0.1',
+            host=os.environ['DB_HOST'],
             port=os.environ['DB_PORT'],
             database=os.environ['DB_NAME'],
             user=os.environ['DB_USER'],
