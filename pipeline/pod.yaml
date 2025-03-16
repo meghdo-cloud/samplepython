@@ -46,6 +46,19 @@ spec:
           mountPath: /home/jenkins/agent
         - name: docker-sock
           mountPath: "/var/run/docker.sock"
+    - name: aws
+      image: amazon/aws-cli
+      imagePullPolicy: Always
+      command: ["sleep"]
+      args: ["9999999"]
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      volumeMounts:
+        - name: workspace-volume
+          mountPath: /home/jenkins/agent
+        - name: docker-sock
+          mountPath: "/var/run/docker.sock"
     - name: python
       image: python:3.11
       command:
