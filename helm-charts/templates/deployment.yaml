@@ -55,13 +55,13 @@ spec:
             - name: URL_PREFIX
               value: "/{{ .Values.virtualservice.prefix }}"
             - name: DB_NAME
-              value: "{{ .Values.sqlproxy.db_name }}"
+              value: "{{ .Values.database.db_name }}"
             - name: DB_HOST
-              value: "{{ .Values.sqlproxy.db_host }}"
+              value: "{{ .Values.database.db_host }}"
             - name: DB_PORT
-              value: "{{ .Values.sqlproxy.db_port }}"
+              value: "{{ .Values.database.db_port }}"
             - name: DB_USER
-              value: "{{ .Values.sqlproxy.db_user }}"
+              value: "{{ .Values.database.db_user }}"
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:

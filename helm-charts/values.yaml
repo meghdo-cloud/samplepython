@@ -27,7 +27,7 @@ serviceAccount:
   automount: true
   # Annotations to add to the service account
   annotations:
-      eks.amazonaws.com/role-arn = aws_iam_role.rds_access_role.arn
+      eks.amazonaws.com/role-arn: aws_iam_role.rds_access_role.arn
 
 # This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/ 
@@ -115,13 +115,14 @@ virtualservice:
   prefix: samplepython
 
 
-sqlproxy:
+database:
   enabled: true
   repository: gcr.io/cloud-sql-connectors/cloud-sql-proxy
   tag: latest
   pullPolicy: IfNotPresent
   db_name: "meghdo-database"
   db_user: "db_user"
+  db_host: "meghdo-instance.ca9m0486s1c6.us-east-1.rds.amazonaws.com"
   db_instance: "meghdo-instance"
   db_port: 5432
   resources:
