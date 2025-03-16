@@ -1,7 +1,7 @@
 library identifier: 'awscommonPipeline@main', retriever: modernSCM([$class: 'GitSCMSource',
     remote: 'git@github.com:meghdo-cloud/shared-libraries.git',
     credentialsId: 'jenkins_agent_ssh'])
-commonPipeline (
+awscommonPipeline (
     accountName: "meghdo",
     accountId: "354918396806",
     clusterName: "meghdo-cluster",
