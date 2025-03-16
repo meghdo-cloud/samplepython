@@ -5,9 +5,8 @@ commonPipeline (
     accountName: "meghdo"
     accountId: "354918396806"
     clusterName: "meghdo-cluster",
-    clusterRegion: "europe-west1",
+    region: "us-east-1",
     appName: "samplepython",
-    dockerRegistry: "europe-west1-docker.pkg.dev",
     namespace: "default",
     scanOWASP: "false",  // OWASP Scanning takes about 7-10 min of scanning time, turn on when scanning is needed
     label: 'python'
