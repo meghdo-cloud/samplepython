@@ -25,10 +25,6 @@ def liveness():
 def readiness():
     try:
         logger.info("Checking database connection...")
-        # Log environment variables (excluding sensitive data)
-        logger.info(f"Database Host: 127.0.0.1")
-        logger.info(f"Database Port: 5432")
-        logger.info(f"Database Name: {str(bool(get_db_connection))}")
         
         conn = get_db_connection()
         cur = conn.cursor()
