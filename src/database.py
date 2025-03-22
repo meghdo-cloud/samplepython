@@ -20,7 +20,8 @@ def get_db_connection():
             port=os.environ['DB_PORT'],
             database=os.environ['DB_NAME'],
             user=os.environ['DB_USER'],
-            password=os.environ['DB_PASSWORD']
+            password=os.environ['DB_PASSWORD'],
+            sslmode='require'
         )
         return connection
     except Exception as e:
