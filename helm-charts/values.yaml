@@ -27,7 +27,7 @@ serviceAccount:
   automount: true
   # Annotations to add to the service account
   annotations:
-      eks.amazonaws.com/role-arn: aws_iam_role.rds_access_role.arn
+      eks.amazonaws.com/role-arn: arn:aws:iam::354918396806:role/rds-access-role
 
 # This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/ 
