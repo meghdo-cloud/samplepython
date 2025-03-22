@@ -119,8 +119,8 @@ database:
   repository: gcr.io/cloud-sql-connectors/cloud-sql-proxy
   tag: latest
   pullPolicy: IfNotPresent
-  db_name: "meghdo-database"
-  db_user: "db_user"
+  db_name: "meghdo_database"
+  db_user: "dbuser"
   db_host: "meghdo-instance.ca9m0486s1c6.us-east-1.rds.amazonaws.com"
   db_instance: "meghdo-instance"
   db_port: 5432
