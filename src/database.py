@@ -5,7 +5,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 def get_db_connection():
-   logger.info(f"Attempting database connection to {os.environ.get('DB_HOST')}:{os.environ.get('DB_PORT')} as {os.environ.get('DB_USER')}")
+    logger.info(f"Attempting database connection to {os.environ.get('DB_HOST')}:{os.environ.get('DB_PORT')} as {os.environ.get('DB_USER')}")
     try:
         # Check if environment variables are set
         required_vars = ['DB_NAME', 'DB_USER', 'DB_PASSWORD']
@@ -24,7 +24,7 @@ def get_db_connection():
             sslmode='require'
             )
          logger.info("Connection successful")
-        return connection
+         return connection
     except Exception as e:
         logger.error(f"Database connection error: {str(e)}", exc_info=True)
         raise
