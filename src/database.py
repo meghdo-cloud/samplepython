@@ -22,9 +22,9 @@ def get_db_connection():
             user=os.environ['DB_USER'],
             password=os.environ['DB_PASSWORD'],
             sslmode='require'
-            )
-         logger.info("Connection successful")
-         return connection
+        )
+        logger.info("Connection successful")  # <-- FIXED INDENTATION
+        return connection
     except Exception as e:
         logger.error(f"Database connection error: {str(e)}", exc_info=True)
         raise
